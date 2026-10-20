@@ -1,0 +1,11 @@
+# A library has no compose stack, so its extensions run on your machine, in
+# its directory, and it can only have clone hooks.
+extensions:
+  - name: build
+    command: make build
+    description: Build the SDK into dist/
+
+hooks:
+  clone:
+    post:
+      - extension: build
